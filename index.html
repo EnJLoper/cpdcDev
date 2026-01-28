@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGB - QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="batac seal.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-content">
+      <img src="batac seal.png" alt="City Logo" class="logo" onerror="this.style.display='none'">
+      <h1>CITY GOVERNMENT OF BATAC</h1>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="wrapper">
+    <div class="container">
+      <h1>QR CODE GENERATOR</h1>
+      <p class="subtitle">Create and customize your QR code instantly.</p>
+
+      <!-- Input Area -->
+      <div class="form-group">
+        <label for="qrText">Employee’s Information</label>
+        <textarea id="qrText" placeholder="Type here..." rows="4">
+        </textarea>
+      </div>
+
+     <!-- Paragraph showing default color 
+      <p style="font-size:16px; font-family:Poppins, sans-serif; margin-top:10px;">Z
+        <strong>SET QR Color:</strong> <br>
+        <span style="color:red; font-weight:bold;">R:5</span>, 
+        <span style="color:green; font-weight:bold;">G:55</span>, 
+        <span style="color:blue; font-weight:bold;">B:155</span>
+      </p>
+      -->
+
+      <!-- Customization Options -->
+      <div class="options">
+        <div>
+          <label for="qrColor">QR Color</label>
+          <input type="color" id="qrColor" value="#000000">
+        </div>
+        <div>
+          <label for="bgColor">Background Color</label>
+          <input type="color" id="bgColor" value="#ffffff">
+        </div>
+        <div>
+          <label for="qrSize">Size</label>
+          <select id="qrSize">
+            <option value="150">150x150</option>
+            <option value="200" selected>200x200</option>
+            <option value="250">250x250</option>
+            <option value="300">300x300</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Transparent Background Toggle (in its own line) -->
+      <div class="transparent-toggle">
+        <label for="transparentBg">Transparent Background</label>
+        <input type="checkbox" id="transparentBg" checked>
+      </div>
+
+      <!-- Generate Button -->
+      <button class="generate-btn" onclick="generateQR()">Generate QR Code</button>
+
+      <!-- QR Result -->
+      <div id="qrResult" class="qr-box">
+        <p class="placeholder">Placeholder for generated QR code.</p>
+      </div>
+
+      <!-- Download Button -->
+      <button id="downloadBtn" class="download-btn" style="display:none;" onclick="downloadQR()">
+        Download QR Code
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2025 CPDCO - INFORMATION AND COMMUNICATIONS TECHNOLOGY SECTION | Developed by <strong>MJCABASA</strong></p>
+  </footer>
+
+  <!-- External Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
